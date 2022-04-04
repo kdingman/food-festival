@@ -29,6 +29,9 @@ module.exports = {
                                 return url.replace("../", "/assets") // changes our assignment URL by replacing the ../ from our require() statement with /assets/
                             }
                         }
+                    },
+                    {
+                        loader: "image-webpack-loader"
                     }
                 ]
             }
