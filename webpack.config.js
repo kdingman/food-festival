@@ -13,6 +13,18 @@ module.exports = {
         filename: "[name].bundle.js", // name used in entry object will be used in place of [name] in each bundle.js file that is created.
         path: __dirname + "/dist", // output bundle files will be written to the dist folder
     },
+    module: {
+        rules: [ // this object will identify the type of files to pre-process using the test property to find a regex
+            {
+                test: /\.jpg$/i, // process any image file with the file extension .jpg
+                use: [ // property where the actual loader is implemented
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
+            }
+        ]
+    },
     plugins: [
         new webpack.ProvidePlugin({
             $: "jquery",

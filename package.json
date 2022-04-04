@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/kdingman/food-festival#readme",
   "devDependencies": {
+    "file-loader": "^6.2.0",
     "webpack": "^5.71.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2"
