@@ -19,7 +19,16 @@ module.exports = {
                 test: /\.jpg$/i, // process any image file with the file extension .jpg
                 use: [ // property where the actual loader is implemented
                     {
-                        loader: 'file-loader'
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                            name (file) {
+                                return "[path][name].[ext]" // returns the nam eof the file w/ the file extension
+                            },
+                            publicPath: function(url) {
+                                return url.replace("../", "/assets") // changes our assignment URL by replacing the ../ from our require() statement with /assets/
+                            }
+                        }
                     }
                 ]
             }
